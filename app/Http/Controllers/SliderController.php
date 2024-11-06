@@ -12,7 +12,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('slider.index');
+        $sliders = Slider::all();
+
+        return view('slider.index', compact('sliders'));
     }
 
     /**
@@ -20,15 +22,34 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('slider.create');
     }
 
     /**
      * Store a newly created resource in storage.
+     * masuk ke method ini untuk create
+     * coba masukan ke database
      */
     public function store(Request $request)
     {
-        //
+        // validasi
+        $request->validate([
+            'title'=> 'required',
+            'description'=> 'required',
+            'image'=> 'required|image',
+        ]);
+
+        $input = $request->all();
+
+        if($image =$request->file('image')){
+            $destinationPath = 'image/';
+            $imageName = date('Ymd'). "." .$image->getClientOriginalExtension();
+            $image->move($destinationPath, $imageName);
+            $input['image'] = $imageName;
+        }
+
+        Slider::create($input);
+        return redirect('/sliders')->with('message','Data Berhasil Ditambahkan');
     }
 
     /**
@@ -44,7 +65,7 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        //
+        return view('slider.edit', compact('slider'));
     }
 
     /**
@@ -52,7 +73,26 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        //
+        // validasi
+        $request->validate([
+            'title'=> 'required',
+            'description'=> 'required',
+            'image'=> 'image',
+        ]);
+
+        $input = $request->all();
+
+        if($image =$request->file('image')){
+            $destinationPath = 'image/';
+            $imageName = date('Ymd'). "." .$image->getClientOriginalExtension();
+            $image->move($destinationPath, $imageName);
+            $input['image'] = $imageName;
+        } else{
+            unset($input['image']);
+        }
+
+        $slider->update($input);
+        return redirect('/sliders')->with('message','Data Berhasil Diedit');
     }
 
     /**
@@ -60,6 +100,7 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        $slider->delete();
+        return redirect('/sliders')->with('message','Data Berhasil Dihapus');
     }
 }

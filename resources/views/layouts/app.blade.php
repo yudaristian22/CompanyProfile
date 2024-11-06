@@ -69,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="nav-item">
                             <a href="/" target="_blank" class="nav-link">
-                                <i class="nav-icon fas fa-link"></i>
+                                <i class="nav-icon fas fa-external-link-alt"></i>
                                 <p>
                                     Lihat Website
                                 </p>
@@ -154,7 +154,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="mb-2 row">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Starter Page</h1>
+                            <h1 class="m-0">@yield('title')</h1>
                         </div>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -202,7 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; {{ date('Y') }} <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All
+            <strong>Copyright &copy; {{ date('Y') }} <a href="https://adminlte.io">Perbama</a>.</strong> All
             rights
             reserved.
         </footer>
