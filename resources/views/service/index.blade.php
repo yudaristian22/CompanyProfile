@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('title')
-    Data Slider
+    Data Service
 @endsection
 
 @section('content')
     <div class="container">
-        <a href="/sliders/create" class="mb-3 btn btn-primary">Tambah Data</a>
+        <a href="/services/create" class="mb-3 btn btn-primary">Tambah Data</a>
         @if ($message = Session::get('message'))
             <div class="alert alert-success">
                 <strong></strong>
@@ -29,7 +29,7 @@
                     @php
                         $i = 1;
                     @endphp
-                    @foreach ($sliders as $slider)
+                    @foreach ($services as $slider)
                         <tr>
                             <td>{{ $i++ }}</td>
                             <td> {{ $slider->title }}</td>
@@ -39,10 +39,10 @@
                             </td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="{{ route('sliders.edit', $slider->id) }}" class="mr-2 btn btn-warning">
+                                    <a href="{{ route('services.edit', $slider->id) }}" class="mr-2 btn btn-warning">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
-                                    <form action="{{ route('sliders.destroy', $slider->id) }}" method="POST">
+                                    <form action="{{ route('services.destroy', $slider->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">

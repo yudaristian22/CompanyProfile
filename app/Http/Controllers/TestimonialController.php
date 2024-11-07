@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Slider;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
-class SliderController extends Controller
+class TestimonialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::all();
+        $testimonials = Testimonial::all();
 
-        return view('slider.index', compact('sliders'));
+        return view('testimonial.index', compact('testimonials'));
     }
 
     /**
@@ -24,7 +24,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('slider.create');
+        return view('testimonial.create');
     }
 
     /**
@@ -50,15 +50,15 @@ class SliderController extends Controller
             $input['image'] = $imageName;
         }
 
-        Slider::create($input);
+        Testimonial::create($input);
         
-        return redirect('/sliders')->with('message','Data Berhasil Ditambahkan');
+        return redirect('/testimonials')->with('message','Data Berhasil Ditambahkan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Slider $slider)
+    public function show(Testimonial $testimonial)
     {
         //
     }
@@ -66,15 +66,15 @@ class SliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Slider $slider)
+    public function edit(Testimonial $testimonial)
     {
-        return view('slider.edit', compact('slider'));
+        return view('testimonial.edit', compact('testimonial'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Slider $slider)
+    public function update(Request $request, Testimonial $testimonial)
     {
         // validasi
         $request->validate([
@@ -94,16 +94,16 @@ class SliderController extends Controller
             unset($input['image']);
         }
 
-        $slider->update($input);
-        return redirect('/sliders')->with('message','Data Berhasil Diedit');
+        $testimonial->update($input);
+        return redirect('/testimonials')->with('message','Data Berhasil Diedit');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Slider $slider)
+    public function destroy(Testimonial $testimonial)
     {
-        $slider->delete();
-        return redirect('/sliders')->with('message','Data Berhasil Dihapus');
+        $testimonial->delete();
+        return redirect('/testimonials')->with('message','Data Berhasil Dihapus');
     }
 }

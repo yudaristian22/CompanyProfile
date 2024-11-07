@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Slider;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
-class SliderController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::all();
+        $portfolios = Portfolio::all();
 
-        return view('slider.index', compact('sliders'));
+        return view('portfolio.index', compact('portfolios'));
     }
 
     /**
@@ -24,7 +24,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('slider.create');
+        return view('portfolio.create');
     }
 
     /**
@@ -50,15 +50,15 @@ class SliderController extends Controller
             $input['image'] = $imageName;
         }
 
-        Slider::create($input);
+        Portfolio::create($input);
         
-        return redirect('/sliders')->with('message','Data Berhasil Ditambahkan');
+        return redirect('/portfolios')->with('message','Data Berhasil Ditambahkan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Slider $slider)
+    public function show(Portfolio $portfolio)
     {
         //
     }
@@ -66,15 +66,15 @@ class SliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Slider $slider)
+    public function edit(Portfolio $portfolio)
     {
-        return view('slider.edit', compact('slider'));
+        return view('portfolio.edit', compact('portfolio'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Slider $slider)
+    public function update(Request $request, Portfolio $portfolio)
     {
         // validasi
         $request->validate([
@@ -94,16 +94,17 @@ class SliderController extends Controller
             unset($input['image']);
         }
 
-        $slider->update($input);
-        return redirect('/sliders')->with('message','Data Berhasil Diedit');
+        $portfolio->update($input);
+
+        return redirect('/portfolios')->with('message','Data Berhasil Diedit');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Slider $slider)
+    public function destroy(Portfolio $portfolio)
     {
-        $slider->delete();
-        return redirect('/sliders')->with('message','Data Berhasil Dihapus');
+        $portfolio->delete();
+        return redirect('/portfolios')->with('message','Data Berhasil Dihapus');
     }
 }

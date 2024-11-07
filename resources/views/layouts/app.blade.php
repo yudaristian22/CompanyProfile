@@ -91,15 +91,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/service" class="nav-link ">
+                                    <a href="/services" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Services</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/features" class="nav-link ">
+                                    <a href="/testimonials" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Features</p>
+                                        <p>Data Testimonials</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
