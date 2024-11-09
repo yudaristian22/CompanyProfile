@@ -23,7 +23,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/dashboard');
+            return redirect('/admin/dashboard');
         }
 
         return back()->withErrors([
@@ -31,8 +31,11 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout(){
+    public function logout(Request $request){
         Auth::logout();
+
+        $request->session()->invalidate();      // Menghapus sesi yang ada
+        $request->session()->regenerateToken(); // Regenerasi token CSRF
 
         return redirect('/login');
 

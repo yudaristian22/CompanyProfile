@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <a href="/testimonials/create" class="mb-3 btn btn-primary">Tambah Data</a>
+        <a href="/admin/testimonials/create" class="mb-3 btn btn-primary">Tambah Data</a>
         @if ($message = Session::get('message'))
             <div class="alert alert-success">
                 <strong></strong>

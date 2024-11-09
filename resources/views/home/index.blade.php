@@ -21,7 +21,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="py-3 bg-white shadow-sm shadow navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="py-2 bg-white shadow-sm shadow navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand fw-semibold" href="/">PERBAMA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -72,28 +72,18 @@
                 aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/assets/img/c11.jpg" class="d-block w-100 carousel-img object-fit-cover" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+            @foreach ($sliders as $index => $slider)
+                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                    <img src="/image/{{ $slider->image }}" class="d-block w-100 carousel-img" alt="..." />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ $slider->title }}</h5>
+                        <p>{{ $slider->description }}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="/assets/img/c12.jpg" class="d-block w-100 carousel-img object-fit-cover" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="/assets/img/c3.jpg" class="d-block w-100 carousel-img object-fit-cover" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
+
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -116,52 +106,39 @@
             <div class="mt-5 row">
                 <div class="col-md-6" data-aos="fade-right">
                     <h3 class="fw-bold about-us-title">
-                        Lorem ipsum dolor sit amet consectetur.
+                        {{ $about->judul }}
                     </h3>
                     <p class="mt-4 fw-bolder about-us-subtitle">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non et
-                        dolore nesciunt repellat odio illum eos quo, rem magnam
-                        consectetur id atque cupiditate maiores assumenda iste
-                        exercitationem quia quam corporis!
+                        {{ $about->subjudul }}
                     </p>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                        magni eveniet necessitatibus, velit earum, assumenda voluptatibus
-                        ratione, ab numquam autem porro. Vitae, praesentium illo quidem
-                        autem consequuntur quis quasi repellat.
+                        {{ $about->deskripsi_1 }}
                     </p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <i class="fa fa-check-double primary"></i>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-                            quasi.
+                            {{ $about->kelebihan_1 }}
                         </li>
                         <li class="list-group-item">
                             <i class="fa fa-check-double primary"></i>
 
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-                            quasi.
+                            {{ $about->kelebihan_2 }}
                         </li>
                         <li class="list-group-item">
                             <i class="fa fa-check-double primary"></i>
 
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-                            quasi.
+                            {{ $about->kelebihan_3 }}
                         </li>
                         <li class="list-group-item">
                             <i class="fa fa-check-double primary"></i>
 
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-                            quasi.
+                            {{ $about->kelebihan_4 }}
                         </li>
                     </ul>
                     <p class="mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                        eligendi rem mollitia assumenda quam eaque facere, pariatur
-                        dolorem obcaecati tempora necessitatibus dolores architecto enim,
-                        ipsam sapiente adipisci modi ducimus saepe!
+                        {{ $about->deskripsi_2 }}
                     </p>
                 </div>
             </div>
@@ -180,90 +157,22 @@
                 facilis!
             </p>
             <div class="mt-5 row">
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
+                @foreach ($services as $service)
+                    <div class="col-md-4">
+                        <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="/image/{{ $service->image }}" alt="" class="img-fluid"
+                                        width="80">
+                                </div>
+                                <div class="mt-3 card-title fw-bolder">{{ $service->title }}</div>
+                                <p class="mt-3 card-description">
+                                    {{ $service->description }}
+                                </p>
                             </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

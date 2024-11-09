@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <a href="/testimonials" class="mb-3 btn btn-primary">Kembali</a>
+        <a href="/admin/testimonials" class="mb-3 btn btn-primary">Kembali</a>
         <div class="row">
             <div class="col-md-12">
                 <form action="{{ route('testimonials.update', $testimonial->id) }}" method="POST"
