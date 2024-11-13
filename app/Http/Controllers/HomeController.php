@@ -20,18 +20,19 @@ class HomeController extends Controller
         $services = Service::all();
         $portfolios = Portfolio::all();
         $clients = Client::all();
+        $contacts = Contact::first();
 
-        return view('home.index', compact('sliders','about','services','portfolios','clients',));
+        return view('home.index', compact('sliders','about','services','portfolios','clients','contacts'));
     }
     public function about(){
-        $about = About::all();
+        $about = About::first();
         $clients = Client::all();
         $teams = Team::all();
         
         return view('home.about',compact('about','clients','teams'));
     }
     public function team(){
-        $team = Team::all();
+        $teams = Team::all();
 
         return view('home.team',compact('teams'));
     }

@@ -80,52 +80,39 @@
         <div class="mt-5 row">
             <div class="col-md-6" data-aos="fade-right">
                 <h3 class="fw-bold about-us-title">
-                    Lorem ipsum dolor sit amet consectetur.
+                    {{ $about->judul }}
                 </h3>
                 <p class="mt-4 fw-bolder about-us-subtitle">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non et
-                    dolore nesciunt repellat odio illum eos quo, rem magnam consectetur
-                    id atque cupiditate maiores assumenda iste exercitationem quia quam
-                    corporis!
+                    {{ $about->subjudul }}
                 </p>
             </div>
             <div class="col-md-6" data-aos="fade-left">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                    magni eveniet necessitatibus, velit earum, assumenda voluptatibus
-                    ratione, ab numquam autem porro. Vitae, praesentium illo quidem
-                    autem consequuntur quis quasi repellat.
+                    {{ $about->deskripsi_1 }}
                 </p>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <i class="fa fa-check-double primary"></i>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-                        quasi.
+                        {{ $about->kelebihan_1 }}
                     </li>
                     <li class="list-group-item">
                         <i class="fa fa-check-double primary"></i>
 
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-                        quasi.
+                        {{ $about->kelebihan_2 }}
                     </li>
                     <li class="list-group-item">
                         <i class="fa fa-check-double primary"></i>
 
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-                        quasi.
+                        {{ $about->kelebihan_3 }}
                     </li>
                     <li class="list-group-item">
                         <i class="fa fa-check-double primary"></i>
 
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
-                        quasi.
+                        {{ $about->kelebihan_4 }}
                     </li>
                 </ul>
                 <p class="mt-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eligendi
-                    rem mollitia assumenda quam eaque facere, pariatur dolorem obcaecati
-                    tempora necessitatibus dolores architecto enim, ipsam sapiente
-                    adipisci modi ducimus saepe!
+                    {{ $about->deskripsi_2 }}
                 </p>
             </div>
         </div>
@@ -144,42 +131,17 @@
                 quod et eum, aperiam cum est amet! Hic, vero.
             </p>
             <div class="row">
-                <div class="col-md-3" data-aos="fade-up">
-                    <div class="card" style="width: 18rem">
-                        <img src="/assets/img/t1.jpg" class="card-img-top" alt="" />
-                        <div class="text-center card-body">
-                            <h5 class="card-title fw-bold">Yuda Ristian Asgari</h5>
-                            <p class="card-text text-muted">Informatics Engineering</p>
+                @foreach ($teams as $team)
+                    <div class="mt-5 col-md-3" data-aos="fade-up">
+                        <div class="card" style="width: 18rem">
+                            <img src="/image/{{ $team->image }}" class="card-img-top" alt="" />
+                            <div class="text-center card-body">
+                                <h5 class="card-title fw-bold">{{ $team->title }}</h5>
+                                <p class="card-text text-muted">{{ $team->description }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up">
-                    <div class="card" style="width: 18rem">
-                        <img src="/assets/img/t1.jpg" class="card-img-top" alt="" />
-                        <div class="text-center card-body">
-                            <h5 class="card-title fw-bold">Yuda Ristian Asgari</h5>
-                            <p class="card-text text-muted">Informatics Engineering</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up">
-                    <div class="card" style="width: 18rem">
-                        <img src="/assets/img/t1.jpg" class="card-img-top" alt="" />
-                        <div class="text-center card-body">
-                            <h5 class="card-title fw-bold">Yuda Ristian Asgari</h5>
-                            <p class="card-text text-muted">Informatics Engineering</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up">
-                    <div class="card" style="width: 18rem">
-                        <img src="/assets/img/t1.jpg" class="card-img-top" alt="" />
-                        <div class="text-center card-body">
-                            <h5 class="card-title fw-bold">Yuda Ristian Asgari</h5>
-                            <p class="card-text text-muted">Informatics Engineering</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -192,127 +154,18 @@
                 <h2 class="text-center fw-bold">CLIENT</h2>
             </div>
             <div class="mt-5 row">
-                <div class="text-center col-md-3" data-aos="zoom-in">
-                    <img src="/assets/img/yonex.svg" class="img-fluid brand-image" alt="" />
-                </div>
-                <div class="text-center col-md-3" data-aos="zoom-in">
-                    <img src="/assets/img/li-ning.svg" class="img-fluid brand-image" alt="" />
-                </div>
-                <div class="text-center col-md-3" data-aos="zoom-in">
-                    <img src="/assets/img/mizuno.svg" class="img-fluid brand-image" alt="" />
-                </div>
-                <div class="text-center col-md-3" data-aos="zoom-in">
-                    <img src="/assets/img/victor.svg" class="img-fluid brand-image" alt="" />
-                </div>
+                @foreach ($clients as $client)
+                    <div class="text-center col-md-3" data-aos="zoom-in">
+                        <img src="/image/{{ $client->image }}" class="img-fluid brand-image" alt="" />
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
     <!-- EndClient -->
 
     <!-- Footer -->
-    <footer class="mt-5">
-        <div class="p-5 text-white footer-top bg-dark">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <h4 class="fw-bold">PERBAMA</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
-                            harum explicabo voluptatum quidem minus necessitatibus laborum
-                            perferendis dicta facilis quam?
-                        </p>
-                        <strong>Phone</strong> : <span> +62 123 456 789</span>
-                        <br />
-                        <strong>Email</strong> :
-                        <span> perbamauinbandung@gmail.com</span>
-                    </div>
-                    <div class="col-md-2">
-                        <h4 class="fw-bold">Our Services</h4>
-                        <ul class="list-group list-unstyled">
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Basic</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Training</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Fun Games</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Organization</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Family</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <h4 class="fw-bold">Useful Links</h4>
-                        <ul class="list-group list-unstyled">
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">HOME</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">ABOUT US</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">SERVICES</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">GALLERY</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">CONTACT</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="fw-bold">Join Our Newsletter</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                        <div class="mb-3 input-group">
-                            <input type="text" class="form-control" placeholder="yourmail@example.com" />
-                            <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="px-5 py-3 text-white footer-down bg-darker">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
-                        <div class="copyright">
-                            &copy; Copyright <strong>Perbama</strong>. All Rights Reserved
-                        </div>
-                        <div class="credits">Designed by Yuda Ristian Asgari</div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="social-links float-end">
-                            <a href="" class="mx-2">
-                                <i class="text-white fab fa-facebook fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="text-white fab fa-x-twitter fa-2x"></i>
-                            </a>
-                            <a href="https://www.instagram.com/perbamauinbdg/" class="mx-2">
-                                <i class="text-white fab fa-instagram fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="text-white fab fa-youtube fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="text-white fab fa-tiktok fa-2x"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <x-footer></x-footer>
     <!-- End Footer -->
 
     <!-- to top -->
