@@ -29,20 +29,20 @@
                     @php
                         $i = 1;
                     @endphp
-                    @foreach ($services as $slider)
+                    @foreach ($services as $service)
                         <tr>
                             <td>{{ $i++ }}</td>
-                            <td> {{ $slider->title }}</td>
-                            <td> {{ $slider->description }}</td>
+                            <td> {{ $service->title }}</td>
+                            <td> {{ $service->description }}</td>
                             <td>
-                                <img src="/image/{{ $slider->image }}" alt="" class="img-fluid" width="90">
+                                <img src="/image/{{ $service->image }}" alt="" class="img-fluid" width="90">
                             </td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="{{ route('services.edit', $slider->id) }}" class="mr-2 btn btn-warning">
+                                    <a href="{{ route('services.edit', $service->id) }}" class="mr-2 btn btn-warning">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
-                                    <form action="{{ route('services.destroy', $slider->id) }}" method="POST">
+                                    <form action="{{ route('services.destroy', $service->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">

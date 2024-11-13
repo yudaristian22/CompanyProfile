@@ -42,14 +42,14 @@ class HomeController extends Controller
         return view('home.services',compact('services'));
     }
     public function contact(){
-        $contact = Contact::first();
+        $contacts = Contact::first();
 
-        return view('home.contact',compact('contact'));
+        return view('home.contact',compact('contacts'));
     }
     public function portfolio(){
-        $portfolio = Portfolio::all();
+        $portfolios = Portfolio::all();
 
-        return view('home.portfolio',compact('portfolio'));
+        return view('home.portfolio',compact('portfolios'));
     }
     public function testimonials(){
         $testimonials = Testimonial::all();

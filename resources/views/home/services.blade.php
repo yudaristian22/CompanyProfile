@@ -82,317 +82,33 @@
                 <h2 class="text-center fw-bold">SERVICES</h2>
             </div>
             <p class="mt-3 text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, non
-                provident? At tenetur assumenda odio ipsum ex nam earum, ipsa quia
-                quod et eum, aperiam cum est amet! Hic, vero.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim,
+                facilis!
             </p>
             <div class="mt-5 row">
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
+                @foreach ($services as $service)
+                    <div class="col-md-4">
+                        <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="/image/{{ $service->image }}" alt="" class="img-fluid"
+                                        width="80">
+                                </div>
+                                <div class="mt-3 card-title fw-bolder">{{ $service->title }}</div>
+                                <p class="mt-3 card-description">
+                                    {{ $service->description }}
+                                </p>
                             </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 mt-3 text-center border-0 card" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="card-icon">
-                                <i class="fa fa-book fa-3x"></i>
-                            </div>
-                            <div class="mt-3 card-title fw-bolder">Lorem Ipsum</div>
-                            <p class="mt-3 card-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                                maiores, necessitatibus.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
     <!-- end services -->
 
-    <!-- features -->
-    <div class="py-5 mt-5 features">
-        <div class="container">
-            <div class="title-container">
-                <h2 class="text-center fw-bold">FEATURES</h2>
-            </div>
-            <p class="mt-4 text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, non
-                provident? At tenetur assumenda odio ipsum ex nam earum, ipsa quia
-                quod et eum, aperiam cum est amet! Hic, vero.
-            </p>
-            <div class="mt-5 row">
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-4 mt-3 border-0 shadow card" data-aos="zoom-in">
-                        <div class="card-body d-flex justify-content-around">
-                            <i class="fa fa-book fa-2x"></i>
-                            <h2 class="fs-5">Lorem Ipsum</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end features -->
-
     <!-- Footer -->
-    <footer class="mt-5">
-        <div class="p-5 text-white footer-top bg-dark">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <h4 class="fw-bold">PERBAMA</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
-                            harum explicabo voluptatum quidem minus necessitatibus laborum
-                            perferendis dicta facilis quam?
-                        </p>
-                        <strong>Phone</strong> : <span> +62 123 456 789</span>
-                        <br />
-                        <strong>Email</strong> :
-                        <span> perbamauinbandung@gmail.com</span>
-                    </div>
-                    <div class="col-md-2">
-                        <h4 class="fw-bold">Our Services</h4>
-                        <ul class="list-group list-unstyled">
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Basic</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Training</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Fun Games</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Organization</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">Family</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <h4 class="fw-bold">Useful Links</h4>
-                        <ul class="list-group list-unstyled">
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">HOME</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">ABOUT US</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">SERVICES</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">GALLERY</a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-white text-decoration-none">CONTACT</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="fw-bold">Join Our Newsletter</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                        <div class="mb-3 input-group">
-                            <input type="text" class="form-control" placeholder="yourmail@example.com" />
-                            <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="px-5 py-3 text-white footer-down bg-darker">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
-                        <div class="copyright">
-                            &copy; Copyright <strong>Perbama</strong>. All Rights Reserved
-                        </div>
-                        <div class="credits">Designed by Yuda Ristian Asgari</div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="social-links float-end">
-                            <a href="" class="mx-2">
-                                <i class="text-white fab fa-facebook fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="text-white fab fa-x-twitter fa-2x"></i>
-                            </a>
-                            <a href="https://www.instagram.com/perbamauinbdg/" class="mx-2">
-                                <i class="text-white fab fa-instagram fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="text-white fab fa-youtube fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="text-white fab fa-tiktok fa-2x"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <x-footer></x-footer>
     <!-- End Footer -->
 
     <!-- to top -->
